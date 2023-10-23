@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">Home Page</a>
+    <a href="/flights/new">Add a Flight</a>
+    <h2>Flight List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Airline</th>
+                <th>Airport</th>
+                <th>Flight Number</th>
+                <th>Departing Date</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% flightDocs.forEach(f=> { %>
+
+                <tr>
+                    <td>
+                        <%= f.airline %>
+                    </td>
+                    <td>
+                        <%= f.airport %>
+                    </td>
+                    <td>
+                        <%= f.flightno %>
+                    </td>
+                    <td>
+                        <%= f.departs %>
+                    </td>
+                </tr>
+
+           <% }) %>
+
+
+        </tbody>
+    </table>
+</body>
+</html>
