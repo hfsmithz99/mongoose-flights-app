@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detail</title>
 </head>
 <body>
     <a href="/">Home Page</a>
@@ -56,5 +56,24 @@
         <h2>No destinations added</h2>
 
     <% } %>
+        <h3>Tickets:</h3>
+        <%if (tickets.length){ %>
+        <table>
+            <thead>
+                <th>Seat</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                <% tickets.forEach(function(t){ %>
+                <td>t.seat</td>
+                <td>t.price</td>
+            <%})%>
+                
+            </tbody>
+        </table>
+    <% } else {%>
+        <h4>No Tickets Available</h4>
+    <%}%>
+    <a href="/flights/:id/tickets/new">Add New Ticket</a>
 </body>
 </html>
